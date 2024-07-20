@@ -177,7 +177,7 @@ Public Class AdvancedSettings
                 End If
             End If
             Dim v = _AdvancedSettings.ComplexSettings.FirstOrDefault(Function(f) f.Table.Name = key AndAlso f.Table.Section = Assembly)
-            Return If(v Is Nothing, Nothing, v.Table.Item)
+            Return v?.Table.Item
         Catch ex As Exception
             logger.Info(ex, New StackFrame().GetMethod().Name)
             Return Nothing
