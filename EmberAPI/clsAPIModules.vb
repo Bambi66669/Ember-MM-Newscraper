@@ -139,7 +139,12 @@ Public Class ModulesManager
     End Sub
 
     Private Sub bwLoadModules_DoWork(ByVal sender As Object, ByVal e As System.ComponentModel.DoWorkEventArgs) Handles bwLoadModules.DoWork
-        LoadModules()
+        Try
+            LoadModules()
+        Catch ex As Exception
+            logger.Error(ex, "Cannot load some modules.")
+            Throw
+        End Try
     End Sub
 
     Private Sub bwLoadModules_RunWorkerCompleted(ByVal sender As Object, ByVal e As System.ComponentModel.RunWorkerCompletedEventArgs) Handles bwLoadModules.RunWorkerCompleted
@@ -259,6 +264,7 @@ Public Class ModulesManager
 
             For Each tAssemblyItem As AssemblyListItem In AssemblyList
                 'Loop through each of the assemeblies type
+                logger.Info("Loading {0}, Version={1}", tAssemblyItem.AssemblyName, tAssemblyItem.AssemblyVersion)
                 For Each fileType As Type In tAssemblyItem.Assembly.GetTypes
 
                     Dim fType As Type = fileType.GetInterface("GenericModule")
