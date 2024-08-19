@@ -8359,11 +8359,11 @@ Public Class frmMain
 
     Private Sub mnuMainDonatePayPal_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles mnuMainDonatePayPal.Click
         If Master.isWindows Then
-            Process.Start("https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VWVJCUV3KAUX2&lc=CH&item_name=Ember%20Media%20Manager&currency_code=CHF&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted")
+            Process.Start("https://www.paypal.com/donate/?hosted_button_id=8AN7JHZZWTFQA")
         Else
             Using Explorer As New Process
                 Explorer.StartInfo.FileName = "xdg-open"
-                Explorer.StartInfo.Arguments = "https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=VWVJCUV3KAUX2&lc=CH&item_name=Ember%20Media%20Manager&currency_code=CHF&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"
+                Explorer.StartInfo.Arguments = "https://www.paypal.com/donate/?hosted_button_id=8AN7JHZZWTFQA"
                 Explorer.Start()
             End Using
         End If
@@ -10553,6 +10553,15 @@ Public Class frmMain
     ''' <remarks></remarks>
     Private Sub frmMain_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         Visible = False
+
+        'AMM changes
+        mnuVersion.Visible = False
+        mnuMainError.Visible = False
+        mnuMainDonatePatreon.Visible = False
+        mnuMainHelpForumEng.Visible = False
+        mnuMainHelpForumGer.Visible = False
+        'END: AMM changes
+
 
         If Master.isWindows Then 'Dam mono on MacOSX don't have trayicon implemented yet
             TrayIcon = New NotifyIcon(components)

@@ -69,7 +69,7 @@ Public NotInheritable Class dlgAbout
             picDisplay.BackgroundImage = iBackground
         End Using
 
-        Text = "About Ember Media Manager"
+        Text = "About Adult Media Manager"
 
         ' Optimize Painting.
         SetStyle(ControlStyles.AllPaintingInWmPaint Or ControlStyles.DoubleBuffer Or
@@ -77,16 +77,20 @@ Public NotInheritable Class dlgAbout
 
         Dim VersionNumber As String = Master.Version
 
-        CredList.Add(New CredLine With {.Text = String.Concat("Ember Media Manager"), .Font = New Font("Microsoft Sans Serif", 24, FontStyle.Bold)})
+        CredList.Add(New CredLine With {.Text = String.Concat("Adult Media Manager"), .Font = New Font("Microsoft Sans Serif", 24, FontStyle.Bold)})
         CredList.Add(New CredLine With {.Text = VersionNumber, .Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)})
         CredList.Add(New CredLine With {.Text = String.Empty, .Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)})
         CredList.Add(New CredLine With {.Text = My.Application.Info.Description, .Font = New Font("Microsoft Sans Serif", 12, FontStyle.Bold)})
         CredList.Add(New CredLine With {.Text = String.Empty, .Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)})
         CredList.Add(New CredLine With {.Text = My.Application.Info.Copyright, .Font = New Font("Microsoft Sans Serif", 12, FontStyle.Bold)})
         CredList.Add(New CredLine With {.Text = String.Empty, .Font = New Font("Microsoft Sans Serif", 10, FontStyle.Bold)})
+
+        CredList.Add(New CredLine With {.Text = String.Concat("Based on: Ember Media Manager"), .Font = New Font("Microsoft Sans Serif", 16, FontStyle.Bold)})
+
         Dim aStr() As String
         aStr = Master.eLang.GetString(968, "credits").Split(Environment.NewLine.ToCharArray)
         Dim aFont As Font = New Font("Microsoft Sans Serif", 12, FontStyle.Regular)
+
         For Each aSt In aStr
             aSt = aSt.Trim
             If (aSt.Length > 0) AndAlso (aSt.Substring(0, 1) = "-") Then
@@ -200,7 +204,7 @@ Public NotInheritable Class dlgAbout
     ''' <param name="e"></param>
     ''' <remarks></remarks>
     Private Sub picDisplay_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles picDisplay.Click
-        Functions.Launch(My.Resources.urlEmberMediaManager)
+        Functions.Launch(My.Resources.urlAdultMediaManager)
     End Sub
     ''' <summary>
     ''' Scroll the credit lines <c>CredList</c> in the dialog window.

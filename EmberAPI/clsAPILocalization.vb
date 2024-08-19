@@ -283,8 +283,8 @@ Public Class Localization
                 Assembly = rAssembly
             End If
 
-
-            If Assembly = "Ember Media Manager" OrElse Assembly = "EmberAPI" OrElse Assembly = "*EmberAPI" OrElse Assembly = "*EmberAPP" Then
+            'FIXME: This is a rough condition, find a better solution
+            If Assembly = "Adult Media Manager" OrElse Assembly = "Ember Media Manager" OrElse Assembly = "EmberAPI" OrElse Assembly = "*EmberAPI" OrElse Assembly = "*EmberAPP" Then
                 Assembly = "*EmberAPP"
                 lPath = String.Concat(Functions.AppPath, "Langs", Path.DirectorySeparatorChar, Language, ".xml")
                 lhPath = String.Concat(Functions.AppPath, "Langs", Path.DirectorySeparatorChar, Language, "-Help.xml")

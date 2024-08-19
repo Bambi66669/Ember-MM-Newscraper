@@ -55,10 +55,11 @@ Public Class Master
 
     Public Shared ReadOnly Property Version() As String
         Get
-            Return String.Format("Version {0}.{1}.{2} {3}",
+            Return String.Format("Version {0}.{1}.{2} {3}", 'x86 is not supported, so we don't display the architecture information
                                  My.Application.Info.Version.Major,
                                  My.Application.Info.Version.Minor,
                                  My.Application.Info.Version.Build,
+                                 If(My.Application.Info.Version.Revision > 0, "beta " + CStr(My.Application.Info.Version.Revision), ""),
                                  If(is32Bit, "x86", "x64"))
         End Get
     End Property

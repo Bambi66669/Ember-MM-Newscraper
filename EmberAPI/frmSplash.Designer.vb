@@ -30,17 +30,20 @@ Partial Class frmSplash
         '
         'LoadingBar
         '
+        Me.LoadingBar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(254, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(84, Byte), Integer))
         Me.LoadingBar.Location = New System.Drawing.Point(1, 357)
         Me.LoadingBar.Maximum = 9
         Me.LoadingBar.Name = "LoadingBar"
         Me.LoadingBar.Size = New System.Drawing.Size(371, 15)
         Me.LoadingBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         Me.LoadingBar.TabIndex = 2
+        Me.LoadingBar.Visible = False
         '
         'VersionNumber
         '
         Me.VersionNumber.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.VersionNumber.BackColor = System.Drawing.Color.Transparent
+        Me.VersionNumber.ForeColor = System.Drawing.Color.White
         Me.VersionNumber.Location = New System.Drawing.Point(229, 341)
         Me.VersionNumber.Name = "VersionNumber"
         Me.VersionNumber.Size = New System.Drawing.Size(143, 13)
@@ -51,6 +54,7 @@ Partial Class frmSplash
         'LoadingMesg
         '
         Me.LoadingMesg.BackColor = System.Drawing.Color.Transparent
+        Me.LoadingMesg.ForeColor = System.Drawing.Color.White
         Me.LoadingMesg.Location = New System.Drawing.Point(4, 341)
         Me.LoadingMesg.Name = "LoadingMesg"
         Me.LoadingMesg.Size = New System.Drawing.Size(219, 13)

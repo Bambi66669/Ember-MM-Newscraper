@@ -10,7 +10,7 @@
     <OutputType>WinExe</OutputType>
     <StartupObject>Ember_Media_Manager.My.MyApplication</StartupObject>
     <RootNamespace>Ember_Media_Manager</RootNamespace>
-    <AssemblyName>Ember Media Manager</AssemblyName>
+    <AssemblyName>Adult Media Manager</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
@@ -48,7 +48,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>logo.ico</ApplicationIcon>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <DebugSymbols>true</DebugSymbols>
@@ -632,6 +632,7 @@
     <None Include="Resources\valid2.png" />
     <None Include="Resources\set.png" />
     <None Include="Resources\imdb.png" />
+    <Content Include="favicon.ico" />
     <Content Include="Images\Countries\ar.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
